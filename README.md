@@ -60,7 +60,7 @@ version：20160517<br>
 [placeholder]:p
 | 效果预览链接 | 源码 |
 | :-------- | :--------:|
-| [PC端](http://yingbiu.github.io/projects/portfolio/PC/index.html) | [查看代码](https://github.com/yingbiu/projects/tree/gh-pages/portfolio/PC) |
+| [PC端](http://yingbiu.github.io/projects/index.html) | [查看代码](https://github.com/yingbiu/projects/tree/gh-pages/portfolio/PC) |
 | [移动端](http://yingbiu.github.io/projects/portfolio/mobile/index.html) | [查看代码](https://github.com/yingbiu/projects/tree/gh-pages/portfolio/mobile) |
 [/placeholder]:p
 
