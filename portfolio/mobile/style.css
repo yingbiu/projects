@@ -285,7 +285,7 @@
 #me_info section:nth-child(2) li:nth-child(1) {
     left: 50%;
     margin-left: -40px;
-    top: 120px;
+    top: 50px;
     background: #ff6665;
 }
 
@@ -296,7 +296,7 @@
 
 #me_info section:nth-child(2) li:nth-child(2) {
     left: 12%;
-    top: 210px;
+    top: 140px;
     background: #ffcb00;
 }
 
@@ -307,7 +307,7 @@
 
 #me_info section:nth-child(2) li:nth-child(3) {
     left: 22%;
-    top: 310px;
+    top: 240px;
     background: #3297ff;
 }
 
@@ -318,7 +318,7 @@
 
 #me_info section:nth-child(2) li:nth-child(4) {
     right: 22%;
-    top: 310px;
+    top: 240px;
     background: #66cb32;
 }
 
@@ -329,7 +329,7 @@
 
 #me_info section:nth-child(2) li:nth-child(5) {
     right: 12%;
-    top: 210px;
+    top: 140px;
     background: #fd9898;
 }
 
