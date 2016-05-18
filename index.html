@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>刘影</title>
+    <meta name="author" content="Alvaro Trigo Lopez"/>
+    <meta name="description" content="fullPage full-screen navigation and sections control menu."/>
+    <meta name="keywords" content="fullpage,jquery,demo,screen,fullscreen,navigation,control arrows, dots"/>
+    <meta name="Resource-type" content="Document"/>
+    <link rel="stylesheet" type="text/css" href="fixed/css/javascript.fullPage.css"/>
+    <link rel="stylesheet" type="text/css" href="fixed/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="fixed/css/common.css">
+    <link rel="stylesheet" type="text/css" href="fixed/css/style.css">
+    <style>
+    </style>
+
+    <!--[if IE]>
+    <script type="text/javascript">
+        var console = {
+            log: function () {
+            }
+        };
+    </script>
+    <![endif]-->
+
+    <script src="fixed/jQuery/jQuery.js"></script>
+    <script type="text/javascript" src="fixed/js/jquery.easings.min.js"></script>
+    <script type="text/javascript" src="fixed/js/jquery.fullPage.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', 'thirdPage'],
+                sectionsColor: ['transparent', "transparent", 'transparent', 'transparent', 'transparent'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['1st page', '2nd page', '3rd page']
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="load">
+    <div id="out">
+        <div id="ine"></div>
+    </div>
+</div>
+<div id="bg">
+    <img src="fixed/img/tm-bg-slide.jpg">
+</div>
+<div id="myContainer">
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="intro">
+                <div class="head_portrait">
+                    <img class="meImg" realsrc="fixed/img/me.jpg" src="">
+
+                    <div>
+                        <p class="head_portrait_text text1">生活中处处是痛点，</p>
+                    </div>
+                    <div>
+                        <p class="head_portrait_text text2">让我们一个一个去解决。</p>
+                    </div>
+                    <div class="line"></div>
+                    <div>
+                        <p class="head_portrait_text text3">刘影</p>
+                    </div>
+                    <div>
+                        <p class="head_portrait_text text4">life hacker</p>
+                    </div>
+                    <div>
+                        <p class="head_portrait_text text5">798558633@qq.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section" id="section2">
+            <div class="container">
+                <div class="lf section2_left">
+                    <div id="skills">
+                        <h2>专业技能</h2>
+
+                        <div class="process">
+                            <strong>javascript</strong>
+                            <span class="rf">95%</span>
+
+                            <div class="process_outer">
+                                <div class="process_inner increase_width_one"></div>
+                            </div>
+                        </div>
+                        <div class="process">
+                            <strong>HTML & CSS</strong>
+                            <span class="rf">85%</span>
+
+                            <div class="process_outer">
+                                <div class="process_inner increase_width_two"></div>
+                            </div>
+                        </div>
+                        <div class="process">
+                            <strong>jQuery & zepto</strong>
+                            <span class="rf">80%</span>
+
+                            <div class="process_outer">
+                                <div class="process_inner increase_width_three"></div>
+                            </div>
+                        </div>
+                        <div class="process">
+                            <strong>nodeJS & C</strong>
+                            <span class="rf">60%</span>
+
+                            <div class="process_outer">
+                                <div class="process_inner increase_width_four"></div>
+                            </div>
+                        </div>
+                        <div class="process">
+                            <strong>mongoDB & MYSQL</strong>
+                            <span class="rf">50%</span>
+
+                            <div class="process_outer">
+                                <div class="process_inner increase_width_five"></div>
+                            </div>
+                        </div>
+                        <div class="process">
+                            <strong>Bootsrap</strong>
+                            <span class="rf">50%</span>
+
+                            <div class="process_outer">
+                                <div class="process_inner increase_width_six"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lf section2_right">
+                    <div id="skill_introduction">
+                        <h2>部分作品展示</h2>
+
+                        <div class="box introduction_text">
+                            <div class="sign">
+                            </div>
+                            <div>
+                                <h3>数学建模</h3>
+                                <a href="http://yingbiu.github.io/projects/maths/dice-roller/diceroller.html">掷骰子</a>
+                                <br/>
+
+                                <a href="https://github.com/yingbiu/projects/tree/gh-pages/maths/pagination">AJAX分页</a>
+                                <br/>
+
+                                <a href="http://yingbiu.github.io/projects/maths/match/index.html">看比赛</a>
+
+                            </div>
+                        </div>
+                        <div class="box introduction_text">
+                            <div class="sign">
+                            </div>
+                            <div>
+                                <h3>Canvas</h3>
+                                <a href="http://yingbiu.github.io/projects/canvas/asciiart/index.html">ASCII Art</a>
+                                <br/>
+                                <a href="http://yingbiu.github.io/projects/canvas/deliquescent/index.html">网格溶解</a>
+                                <br/>
+                                <a href="http://whxaxes.github.io/canvas-test/src/Particle-demo/blackhole/blackhole.html">黑洞</a>
+                                <br/>
+                                <a href="http://whxaxes.github.io/canvas-test/src/Funny-demo/musicPlayer/index.html">可视化音乐播放器</a>
+                                <br/>
+                                <a href="http://www.georgeandjonathan.com/">更加惊人的音乐动画</a>
+                            </div>
+                        </div>
+                        <div class="box introduction_text">
+                            <div class="sign">
+                            </div>
+                            <div>
+                                <h3>个人简历</h3>
+                                <a href="http://yingbiu.github.io/projects/portfolio/PC/index.html">PC端</a>
+                                <br/>
+                                <a href="http://yingbiu.github.io/projects/portfolio/mobile/index.html">移动端</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="container sec3">
+
+                <div class="self_plug">
+                    <a href="demo/TableAndSort/index.html" target="_blank">
+                        <div class="demo">
+                            <p class="demo_title">个人插件</p>
+
+                            <div class="more">
+                                <p class="more_title">表格排序与分页</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="demo/JSONP_Baidu_Serach/index.html" target="_blank">
+                        <div class="demo">
+                            <p class="demo_title">个人模块</p>
+
+                            <div class="more">
+                                <p class="more_title">我的百度</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="demo/Drag/index.html" target="_blank">
+                        <div class="demo">
+                            <p class="demo_title">个人提炼</p>
+
+                            <div class="more">
+                                <p class="more_title">拖拽</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="fixed/js/utils.js"></script>
+<script type="text/javascript" src="fixed/js/event.js"></script>
+<script type="text/javascript" src="fixed/js/EventEmitter.js"></script>
+<script type="text/javascript" src="fixed/js/animate.js"></script>
+<script type="text/javascript" src="fixed/js/api.js"></script>
+</html>
