@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            -webkit-user-select: none;
+        }
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td{
+            padding: 15px;
+        }
+        th{
+            text-align: center;
+        }
+        #nav a, #nav span{
+            background: yellow;
+            color: black;
+            margin: 3px;
+            margin-top: 10px;
+            float: left;
+            display: inline;
+            cursor: pointer;
+        }
+        #nav div a.current{
+            background: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+
+</div>
+</body>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", "mydata.txt", true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && /^2\d{2}$/.test(xhr.status)) {
+            var data = xhr.responseText;
+            init(data, 10);
+        }
+        function init(data, num) {
+            var currentPage = 0;
+            var a = JSON.parse(data);
+            var content = document.getElementById("content");
+            var oTable = document.createElement("table");
+            content.appendChild(oTable);
+            var oThead = document.createElement("thead");
+            oTable.appendChild(oThead);
+            var oTr = document.createElement("tr");
+            for (var attr in a[0]) {
+                var oTh = document.createElement("th");
+                oTh.innerHTML = attr;
+                oTr.appendChild(oTh);
+            }
+            oThead.appendChild(oTr);
+            var oTbody = document.createElement("tbody");
+            oTable.appendChild(oTbody);
+            showPage(currentPage);
+            var nav = document.createElement("div");
+            nav.id = "nav";
+            content.appendChild(nav);
+            var count = Math.ceil(a.length / num);
+            var totalPage = document.createElement("span");
+            totalPage.innerHTML = count + " pages";
+            nav.appendChild(totalPage);
+            var prevPage = document.createElement("a");
+            prevPage.innerHTML = "Previous";
+            prevPage.onclick = pPage;
+            prevPage.href="#"
+            nav.appendChild(prevPage);
+            var container=document.createElement("div");
+            nav.appendChild(container);
+            container.id="container";
+            for(var i=0;i<count;i++){
+                var oPage=document.createElement("a");
+                oPage.href="#";
+                oPage.innerHTML="page"+(i+1);
+                oPage.onclick= function () {
+                    showPage(currentPage=this.innerHTML.match(/\d/)[0]-1);
+
+                }
+                container.appendChild(oPage);
+            }
+
+            var nextPage=document.createElement("a");
+            nextPage.href="#";
+            nextPage.innerHTML="Next";
+            nextPage.onclick=nPage;
+            nav.appendChild(nextPage);
+            function showPage(n) {
+                oTbody.innerHTML = "";
+                for (var i = num * n; i < (n + 1) * num; i++) {
+                    var oTr = document.createElement("tr");
+                    for(var attr in a[i]){
+                        var oTd=document.createElement("td");
+                        oTd.innerHTML=a[i][attr];
+                        oTr.appendChild(oTd);
+                    }
+                    oTbody.appendChild(oTr);
+                }
+                var container=document.getElementById("container");
+                if(container){
+                 var oPages=container.getElementsByTagName("a");
+                    for(i=0;i<oPages.length;i++){
+                        oPages[i].className="";
+                    }
+                    oPages[n].className="current";
+                }
+            }
+
+            function pPage() {
+                if (currentPage - 1 >= 0) {
+                    showPage(--currentPage);
+                }
+            }
+            function nPage(){
+                if(currentPage+1<=count-1){
+                    showPage(++currentPage);
+                }
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+
+    var data = null;
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", "js/Name.txt", true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && /^2\d{2}$/.test(xhr.status)) {
+            data = xhr.responseText;
+            getData(data);
+        }
+    }
+    //    alert(data[0]);
+    //firstName instanceof Array
+    function getData(data) {
+        reg = /( +)|(\n+)/g;
+        reg2 = /\s+/g;
+        var familyName = "赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜戚谢邹喻柏水窦章云苏潘葛奚范彭郎鲁韦昌马苗凤花方俞任袁柳酆鲍史唐费廉岑薛雷贺倪汤滕殷罗毕郝邬安常乐于时傅皮卞齐康伍余元卜顾孟平黄和穆萧尹姚邵湛汪祁毛禹狄米贝明臧计伏成戴谈宋茅庞熊纪舒屈项祝董梁杜阮蓝闵席季麻强贾路娄危江童颜郭梅盛林刁钟丘徐邱骆高夏蔡田樊胡凌霍虞万支柯昝管卢莫经房裘缪干解应宗丁宣贲邓单杭洪包诸左石崔吉钮龚程嵇邢滑裴陆荣翁 荀羊於惠 甄曲家封 芮羿储靳 汲邴糜松 井段富巫 乌焦巴弓 牧隗山谷 车侯宓蓬 全郗班仰 秋仲伊宫";
+        familyName = familyName.replace(reg, "");
+        console.log(familyName);
+        var firstName = data.replace(reg, "");
+        firstName = firstName.split('、');
+        firstName.pop();
+
+        var n = 54;
+        var names = getNames(n);
+        console.log(names)
+        console.log(names.length);
+        var genders = getGenders(n);
+        console.log(genders);
+        console.log(genders.length)
+        var ages=getAges(n);
+        console.log(ages);
+        console.log(ages.length);
+        var hobbies=getHobbies(n);
+        console.log(hobbies);
+        console.log(hobbies.length);
+        var courses=getCourses(n);
+        console.log(courses);
+        var degrees=getDegrees(n);
+        console.log(degrees);
+        var ids=getIDs(n);
+        console.log(ids);
+//        Merge Data
+        var myData=merge(names,genders,ages,hobbies,courses,degrees);
+        //Save to txt
+        var fso, f1;
+
+//        fso = new ActiveXObject('Scripting.FileSystemObject');
+//// 创建文件
+//        f1 = fso.CreateTextFile("a.txt", true);
+//// 填写一行数据
+//        f1.WriteLine(myData);
+
+        function merge(names,genders,ages,hobbies,courses,degrees){
+//            var myJSON=[];
+            var myJSON='[';
+                  //[{"name":"王云","gender":"其它","age":"24","hobby":["喝酒","学JS","同学"],"course":["英语","语文"],"degree":"脖子后","id":1},
+            for(var i=0;i<names.length;i++){
+
+                var person='{'+'"name":"'+names[i]+'","gender":"'+genders[i]+'","age":"'
+                        +ages[i]+'","hobby":"'+hobbies[i]+'","courses":"'+courses[i]
+                        +'","degrees":"'+degrees[i]+'"},';
+                myJSON+=person;
+
+            }
+            //s=s.Substring(0,s.Length-1)
+            myJSON=myJSON.substring(0,myJSON.length-1);
+
+            myJSON+=']';
+            console.log(myJSON);
+            console.log(JSON.parse(myJSON));
+            return myJSON;
+        }
+
+        function getIDs(n){
+            var ids=[];
+            for(var i=0;i<n;i++){
+                ids.push(i+1);
+            }
+            return ids;
+        }
+        function getDegrees(n){
+            var degrees=[];
+            var defaultDegrees=["Bachelor","Master","PhD"];
+
+            for (var i=0;i<n;i++){
+                var r = Math.ceil(Math.random() * 3);
+                var myDegree=defaultDegrees[r-1];
+                degrees.push(myDegree);
+            }
+            return degrees;
+        }
+        function getCourses(n){
+            var courses=[];
+            var defaultCourses=["Maths","English","Physics"];
+
+            for (var i=0;i<n;i++){
+                var r = Math.ceil(Math.random() * 3);
+                var myCourse=defaultCourses[r-1];
+                courses.push(myCourse);
+            }
+            return courses;
+        }
+        function getHobbies(n){
+            var hobbies=[];
+            var defaultHobbies=["JS","CSS","HTML"];
+
+            for (var i=0;i<n;i++){
+                var r = Math.ceil(Math.random() * 3);
+                var myHobby=defaultHobbies[r-1];
+                hobbies.push(myHobby);
+            }
+            return hobbies;
+        }
+        function getGenders(n) {
+
+            var genders = [];
+            for (var i = 0; i < n; i++) {
+                var r = Math.ceil(Math.random() * 2);
+                if (r == 1) {
+                   var  myGender = "M"
+                } else {
+                    myGender = "F";
+                }
+                genders.push(myGender);
+            }
+            return genders;
+        }
+
+        function getAges(n) {
+            var ages=[];
+
+
+            for (var i = 0; i < n; i++) {
+               var myAge=10+ Math.ceil(Math.random() * 20);
+                ages.push(myAge);
+            }
+            return ages;
+        }
+
+        function getNames(n) {
+            var names = [];
+            for (var i = 0; i < n; i++) {
+                var r1 = Math.ceil(Math.random() * (familyName.length - 1));
+                var r2 = Math.ceil(Math.random() * (firstName.length - 1));
+                var myName = familyName[r1] + firstName[r2];
+
+                names.push(myName);
+
+            }
+            return names;
+        }
+    }
+
+
+</script>
+</body>
+</html>
