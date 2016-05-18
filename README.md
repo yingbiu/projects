@@ -41,7 +41,7 @@ version：20160517<br>
 | :-------- | :--------:|
 | [ASCII Art](http://yingbiu.github.io/projects/canvas/asciiart/index.html) | [查看代码](https://github.com/yingbiu/projects/tree/gh-pages/canvas/asciiart) |
 | [网格溶解](http://yingbiu.github.io/projects/canvas/deliquescent/index.html) | [查看代码](https://github.com/yingbiu/projects/tree/gh-pages/canvas/deliquescent) |
-| [黑洞](http://yingbiu.github.io/projects/canvas/blackhole/index.html) | [查看代码](https://github.com/yingbiu/projects/tree/gh-pages/canvas/blackhole) |
+| [黑洞](http://whxaxes.github.io/canvas-test/src/Particle-demo/blackhole/blackhole.html) | [查看代码](https://github.com/whxaxes/canvas-test/tree/master/src/Particle-demo/blackhole) |
 | [可视化音乐播放器](http://whxaxes.github.io/canvas-test/src/Funny-demo/musicPlayer/index.html) | [查看代码](https://github.com/whxaxes/canvas-test/tree/master/src/Funny-demo/musicPlayer) |
 | [更加惊人的音乐动画](http://www.georgeandjonathan.com/) | [查看代码（暂无）] |
 [/placeholder]:p
@@ -71,4 +71,6 @@ version：20160517<br>
 Ying Liu
 
 ## REFERENCE
-
+@jendewalt https://github.com/yingbiu/jennifer_dewalt
+@whxaxes https://github.com/whxaxes/canvas-test
+@pixelass  @enxaneta on codepen
